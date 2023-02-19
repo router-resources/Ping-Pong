@@ -44,6 +44,11 @@ npm start
 - [🚀 Quick Start](#-quick-start)
 - [🧭 Table of contents](#-table-of-contents)
 - [🏗 Frontend](#React JS, Ether.js)
+  - [`Basic imports and Setting up Providers`]
+  - [`Creating a WalletConnect Button`]
+  - [`Sending message to the desination chain`]
+  - [`Fetching Received message from destination chain`]
+  - [`Fetching Acknowledgement from the source chain`]
  
 - [🏗 Backend](#Solidity, Router Cross-Talk Library)
   - [`Initiating the Contract`](#Initiating-the-Contract)
