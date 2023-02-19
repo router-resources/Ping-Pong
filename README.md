@@ -2,7 +2,7 @@
 
 > Effortlessly Send and Receive Messages across Blockchains with Ping-Pong Dapp Built with ReactJS and Router Cross-Talk.
 
-🚀DEMO: link
+🚀DEMO: https://ping-pong-9f9af.web.app/
 
 This project is built with [Router CrossTalk](https://dev.routerprotocol.com/crosstalk-library/overview/introduction)
 
