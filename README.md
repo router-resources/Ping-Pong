@@ -87,6 +87,8 @@ const provider2= new ethers.providers.JsonRpcProvider("https://rpc.ankr.com/aval
 
 ### `Creating a WalletConnect Button`
 
+![Ping-Pong](https://firebasestorage.googleapis.com/v0/b/ping-pong-9f9af.appspot.com/o/connect%20wallet.png?alt=media&token=997a5d0d-a05f-4117-8ecb-17d45f6f4c69)
+
 The code creates a button with an onClick event listener. When the button is clicked, the code checks if the MetaMask browser extension is installed in the user's browser.
 
 If MetaMask is detected, the code tries to request access to the user's Ethereum accounts by calling the eth_requestAccounts method using the window.ethereum object. If the user approves the request, their account address is displayed in an alert.
@@ -120,6 +122,8 @@ If MetaMask is not detected, the user is alerted that it is not installed
 
 ### `Sending message to the Desination Chain`
 
+![Ping-Pong](https://firebasestorage.googleapis.com/v0/b/ping-pong-9f9af.appspot.com/o/Demo2.gif?alt=media&token=43933f12-3b85-4dcb-884c-e936a9d704ff)
+
 This code creates a button with an onClick event listener. When the button is clicked, it uses the provider object to get the signer and creates a new ethers.Contract instance with the contractAddress, abi, and signer parameters.
 
 The code then calls the pingDestination() function of the contract with the given parameters. This function is a part of the CrossTalk library, and it sends a message from the source chain to the destination chain.
@@ -146,6 +150,8 @@ The pingDestination() function takes several parameters, as per its signature de
 	}}>Send Message</button>
 ```
 ## `Fetching Received message from Destination Chain`
+
+![Ping-Pong](https://firebasestorage.googleapis.com/v0/b/ping-pong-9f9af.appspot.com/o/Demo2.gif?alt=media&token=43933f12-3b85-4dcb-884c-e936a9d704ff)
 
 This code defines a button that is used to fetch the received message on the destination chain. First, it fetches the current request ID corresponding to the message sent from the source chain by calling the currentRequestId function of the smart contract deployed on the Polygon Mumbai network using the provider1 provider.
 
@@ -187,6 +193,8 @@ Then, it calls the pingFromSource function of the smart contract deployed on the
 ````
 
 ### `Fetching Acknowledgement from the source chain`
+
+![Ping-Pong](https://firebasestorage.googleapis.com/v0/b/ping-pong-9f9af.appspot.com/o/Demo2.gif?alt=media&token=43933f12-3b85-4dcb-884c-e936a9d704ff)
 
 The button when clicked , first, it fetches the current request ID corresponding to the message sent from the smart contract deployed on the source chain by calling the currentRequestId() function of the contract deployed on the source chain.
 
