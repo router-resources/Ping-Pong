@@ -87,6 +87,7 @@ const provider2= new ethers.providers.JsonRpcProvider("https://rpc.ankr.com/aval
 
 ### `Creating a WalletConnect Button`
 
+
 ![Ping-Pong](https://firebasestorage.googleapis.com/v0/b/ping-pong-9f9af.appspot.com/o/connect%20wallet.png?alt=media&token=997a5d0d-a05f-4117-8ecb-17d45f6f4c69)
 
 The code creates a button with an onClick event listener. When the button is clicked, the code checks if the MetaMask browser extension is installed in the user's browser.
@@ -122,6 +123,8 @@ If MetaMask is not detected, the user is alerted that it is not installed
 
 ### `Sending message to the Desination Chain`
 
+
+
 ![Ping-Pong](https://firebasestorage.googleapis.com/v0/b/ping-pong-9f9af.appspot.com/o/send.png?alt=media&token=019e5d27-a54b-41a7-beb4-c0b5c63e2e7d)
 
 This code creates a button with an onClick event listener. When the button is clicked, it uses the provider object to get the signer and creates a new ethers.Contract instance with the contractAddress, abi, and signer parameters.
@@ -150,6 +153,8 @@ The pingDestination() function takes several parameters, as per its signature de
 	}}>Send Message</button>
 ```
 ## `Fetching Received message from Destination Chain`
+
+
 
 ![Ping-Pong](https://firebasestorage.googleapis.com/v0/b/ping-pong-9f9af.appspot.com/o/recieve%20message.png?alt=media&token=1f5dbb88-4e97-4be4-a9ea-2185c192c02a)
 
@@ -193,6 +198,8 @@ Then, it calls the pingFromSource function of the smart contract deployed on the
 ````
 
 ### `Fetching Acknowledgement from the source chain`
+
+
 
 ![Ping-Pong](https://firebasestorage.googleapis.com/v0/b/ping-pong-9f9af.appspot.com/o/Ack.png?alt=media&token=6a2f6d8e-0439-412e-99e4-273c7695f404)
 
