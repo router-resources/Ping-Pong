@@ -85,7 +85,41 @@ const provider1 = new ethers.providers.JsonRpcProvider("https://rpc.ankr.com/pol
 const provider2= new ethers.providers.JsonRpcProvider("https://rpc.ankr.com/avalanche_fuji")
 ```
 
+### `Creating a WalletConnect Button`
 
+The code creates a button with an onClick event listener. When the button is clicked, the code checks if the MetaMask browser extension is installed in the user's browser.
+
+If MetaMask is detected, the code tries to request access to the user's Ethereum accounts by calling the eth_requestAccounts method using the window.ethereum object. If the user approves the request, their account address is displayed in an alert.
+
+If MetaMask is not detected, the user is alerted that it is not installed
+
+```sh
+<button onClick={async()=>{
+         
+     
+         // ❌ Check if Meta Mask Extension exists 
+         if(window.ethereum) {
+           console.log('detected');
+     
+           try {
+             const accounts = await window.ethereum.request({
+               method: "eth_requestAccounts",
+             });
+             alert(accounts[0])
+       
+           } catch (error) {
+             console.log('Error connecting...');
+           }
+     
+         } else {
+           alert('Meta Mask not detected');
+         }
+       
+     
+   }}>
+     ----Some Text----
+     </button> 
+  ```
 
 
 
