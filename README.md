@@ -96,8 +96,6 @@ If MetaMask is not detected, the user is alerted that it is not installed
 ```sh
 <button onClick={async()=>{
          
-     
-         // ❌ Check if Meta Mask Extension exists 
          if(window.ethereum) {
            console.log('detected');
      
@@ -114,8 +112,7 @@ If MetaMask is not detected, the user is alerted that it is not installed
          } else {
            alert('Meta Mask not detected');
          }
-       
-     
+      
    }}>
      ----Some Text----
      </button> 
