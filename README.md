@@ -61,21 +61,13 @@ npm start
 
 ### `Basic imports and Setting up Providers`
 
-First we  import the ethers library from the Ethereum JavaScript library ethers.js.
-
-ethers is a JavaScript library that allows developers to interact with Ethereum networks using various programming languages, including JavaScript, TypeScript, Python, and others.
-
-The ethers library provides a wide range of tools and utilities for interacting with Ethereum, such as creating wallets, managing accounts, signing transactions, deploying smart contracts, and more.
+First, we import the ethers library from the Ethereum JavaScript library ethers.js. ethers is a JavaScript library that provides a range of tools and utilities for interacting with Ethereum networks. Developers can use ethers to create wallets, manage accounts, sign transactions, deploy smart contracts, and more, all using JavaScript.
 
 ```sh
 import { ethers } from 'ethers';
 ```
 
-Next, we declares a variable called 'abi' and initializes it with an array of values. The values in the array represent the ABI (Application Binary Interface) definition for a smart contract on the Ethereum network. The ABI specifies how function calls and data should be formatted for smart contract interactions.
-
-The abi variable can be used in conjunction with various Ethereum development tools, including the ethers library, to interact with the smart contract defined by the ABI.
-
-We can find ABI of a smart contract in the compile section of our Remix IDE
+Next, we declares an array called abi that represents the ABI (Application Binary Interface) definition for a smart contract on the Ethereum network. The ABI specifies how to interact with the smart contract by defining the format of its data and function calls.
 
 ```sh
 const abi=[<paste your ABI here>]
