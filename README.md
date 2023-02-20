@@ -71,7 +71,7 @@ The ethers library provides a wide range of tools and utilities for interacting 
 import { ethers } from 'ethers';
 ```
 
-Next we declares a variable called 'abi' and initializes it with an array of values. The values in the array represent the ABI (Application Binary Interface) definition for a smart contract on the Ethereum network. The ABI specifies how function calls and data should be formatted for smart contract interactions.
+Next, we declares a variable called 'abi' and initializes it with an array of values. The values in the array represent the ABI (Application Binary Interface) definition for a smart contract on the Ethereum network. The ABI specifies how function calls and data should be formatted for smart contract interactions.
 
 The abi variable can be used in conjunction with various Ethereum development tools, including the ethers library, to interact with the smart contract defined by the ABI.
 
@@ -81,9 +81,21 @@ We can find ABI of a smart contract in the compile section of our Remix IDE
 const abi=[<paste your ABI here>]
 ```
 
-Next,we declare three instances of the ethers.providers class: Web3Provider and two JsonRpcProvider instances.
+The next step is to declare three instances of ethers.providers class: Web3Provider and two JsonRpcProvider instances.
 
-ethers.providers is a sub-module of the ethers library that provides implementations of Ethereum providers. Providers are used to connect to Ethereum nodes and retrieve information from the Ethereum network, such as account balance, or even calling a function of the smart contract
+Web3Provider is used to interact with the Ethereum network through the user's browser wallet. JsonRpcProvider is used to connect to the Ethereum network using an RPC (Remote Procedure Call) endpoint.
+
+provider instance uses the window.ethereum object to connect to the user's browser wallet. provider1 and provider2 instances connect to the Polygon Mumbai and Avalanche Fuji testnets respectively using https endpoints.
+
+```sh
+const provider = new ethers.providers.Web3Provider(window.ethereum);
+const provider1 = new ethers.providers.JsonRpcProvider("https://rpc.ankr.com/polygon_mumbai");
+const provider2= new ethers.providers.JsonRpcProvider("https://rpc.ankr.com/avalanche_fuji")
+```
+
+
+
+
 
   
 # 🏗 Backend
