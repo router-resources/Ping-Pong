@@ -87,10 +87,11 @@ const provider2= new ethers.providers.JsonRpcProvider("https://rpc.ankr.com/aval
 
 ### `Creating a WalletConnect Button`
 
+The code creates a button with an onClick event listener. When the button is clicked, the code checks if the MetaMask browser extension is installed in the user's browser.
+
 
 ![Ping-Pong](https://firebasestorage.googleapis.com/v0/b/ping-pong-9f9af.appspot.com/o/connect%20wallet.png?alt=media&token=997a5d0d-a05f-4117-8ecb-17d45f6f4c69)
 
-The code creates a button with an onClick event listener. When the button is clicked, the code checks if the MetaMask browser extension is installed in the user's browser.
 
 If MetaMask is detected, the code tries to request access to the user's Ethereum accounts by calling the eth_requestAccounts method using the window.ethereum object. If the user approves the request, their account address is displayed in an alert.
 
@@ -121,15 +122,15 @@ If MetaMask is not detected, the user is alerted that it is not installed
      </button> 
   ```
 
-### `Sending message to the Desination Chain`
-
-
-
-![Ping-Pong](https://firebasestorage.googleapis.com/v0/b/ping-pong-9f9af.appspot.com/o/send.png?alt=media&token=019e5d27-a54b-41a7-beb4-c0b5c63e2e7d)
+## `Sending message to the Desination Chain`
 
 This code creates a button with an onClick event listener. When the button is clicked, it uses the provider object to get the signer and creates a new ethers.Contract instance with the contractAddress, abi, and signer parameters.
 
 The code then calls the pingDestination() function of the contract with the given parameters. This function is a part of the CrossTalk library, and it sends a message from the source chain to the destination chain.
+
+
+![Ping-Pong](https://firebasestorage.googleapis.com/v0/b/ping-pong-9f9af.appspot.com/o/send.png?alt=media&token=019e5d27-a54b-41a7-beb4-c0b5c63e2e7d)
+
 
 The pingDestination() function takes several parameters, as per its signature defined. You can checkout its signature here [`Sending a message to the destination chain`](#Sending-a-message-to-the-destination-chain). 
 
@@ -154,13 +155,14 @@ The pingDestination() function takes several parameters, as per its signature de
 ```
 ## `Fetching Received message from Destination Chain`
 
+This code defines a button that is used to fetch the received message on the destination chain. First, it fetches the current request ID corresponding to the message sent from the source chain by calling the currentRequestId function of the smart contract deployed on the Polygon Mumbai network using the provider1 provider.
+
+Then, it calls the pingFromSource function of the smart contract deployed on the Avalanche Fuji network using the provider2 provider and passing in the current request ID and other necessary arguments based on the function's signature.You can checkout the signature of the function here [`Handling a crosschain request`](#Handling-a-crosschain-request).
 
 
 ![Ping-Pong](https://firebasestorage.googleapis.com/v0/b/ping-pong-9f9af.appspot.com/o/recieve%20message.png?alt=media&token=1f5dbb88-4e97-4be4-a9ea-2185c192c02a)
 
-This code defines a button that is used to fetch the received message on the destination chain. First, it fetches the current request ID corresponding to the message sent from the source chain by calling the currentRequestId function of the smart contract deployed on the Polygon Mumbai network using the provider1 provider.
 
-Then, it calls the pingFromSource function of the smart contract deployed on the Avalanche Fuji network using the provider2 provider and passing in the current request ID and other necessary arguments based on the function's signature.You can checkout the signature of the function here [`Handling a crosschain request`](#Handling-a-crosschain-request).
 
 ```sh
  <button onClick={async () => {
@@ -197,15 +199,16 @@ Then, it calls the pingFromSource function of the smart contract deployed on the
 }}>Message Recieved</button>
 ````
 
-### `Fetching Acknowledgement from the source chain`
-
-
-
-![Ping-Pong](https://firebasestorage.googleapis.com/v0/b/ping-pong-9f9af.appspot.com/o/Ack.png?alt=media&token=6a2f6d8e-0439-412e-99e4-273c7695f404)
+## `Fetching Acknowledgement from the source chain`
 
 The button when clicked , first, it fetches the current request ID corresponding to the message sent from the smart contract deployed on the source chain by calling the currentRequestId() function of the contract deployed on the source chain.
 
 Then, it calls the ackFromDestination() function of the smart contract deployed on the source chain, passing in the request ID as an argument.
+
+
+![Ping-Pong](https://firebasestorage.googleapis.com/v0/b/ping-pong-9f9af.appspot.com/o/Ack.png?alt=media&token=6a2f6d8e-0439-412e-99e4-273c7695f404)
+
+
 
 Once the promise gets resolved, then() function is called, allowing you to perform some action with the data returned from the acknowledgement.
 
@@ -235,7 +238,7 @@ If an error occurs, the catch() function is called and an alert is displayed, re
 
 # 🏗 Backend
   
-### `Initiating the Contract`
+## `Initiating the Contract`
 
 For initiating the smart contract named "PingPong", the contract imports three external contracts :-
 
@@ -255,7 +258,7 @@ import "evm-gateway-contract/contracts/IGateway.sol";
 import "evm-gateway-contract/contracts/ICrossTalkApplication.sol";
 import "evm-gateway-contract/contracts/Utils.sol";
 ```
-### `Creating State Variables and the Constructor`
+## `Creating State Variables and the Constructor`
 
 state variables and events are defined for the contract in the Solidity programming language. The code defines the following:
 
@@ -299,7 +302,7 @@ constructor(
 }
 ```
 
-### `Sending a message to the destination chain`
+## `Sending a message to the destination chain`
 
 **pingDestination Function**:-
 
@@ -359,7 +362,7 @@ Finally,since we want to create only a single request to the destination chain i
   );
 }
 ```
-### `Handling a crosschain request`
+## `Handling a crosschain request`
 
 **handleRequestFromSource function:-**
 
@@ -405,7 +408,7 @@ Finally, the function will return a byte array that contains the "srcChainId" an
 }
 ```
  
-### `Handling the acknowledgement received from destination chain`
+## `Handling the acknowledgement received from destination chain`
 
 **handleCrossTalkAck function:-**
 
