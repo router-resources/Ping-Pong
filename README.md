@@ -149,10 +149,10 @@ The pingDestination() function takes several parameters, as per its signature de
 
 This code defines a button that is used to fetch the received message on the destination chain. First, it fetches the current request ID corresponding to the message sent from the source chain by calling the currentRequestId function of the smart contract deployed on the Polygon Mumbai network using the provider1 provider.
 
-Then, it calls the pingFromSource function of the smart contract deployed on the Avalanche Fuji network using the provider2 provider and passing in the current request ID and other necessary arguments based on the function's signature.You can checkout the signature of the function here [`Fetching Received message from Destination Chain`](#Fetching-Received-message-from-Destination-Chain).
+Then, it calls the pingFromSource function of the smart contract deployed on the Avalanche Fuji network using the provider2 provider and passing in the current request ID and other necessary arguments based on the function's signature.You can checkout the signature of the function here [`Handling a crosschain request`](#Handling-a-crosschain-request).
 
 ```sh
- <button type="button" class="btn btn-success" onClick={async () => {
+ <button onClick={async () => {
                            
            const contractAddress1 = "0x9fF2c6D8bFf3b87538A156Ea1a768ec5A2d55B32";
 
@@ -185,6 +185,38 @@ Then, it calls the pingFromSource function of the smart contract deployed on the
 
 }}>Message Recieved</button>
 ````
+
+### `Fetching Acknowledgement from the source chain`
+
+The button when clicked , first, it fetches the current request ID corresponding to the message sent from the smart contract deployed on the source chain by calling the currentRequestId() function of the contract deployed on the source chain.
+
+Then, it calls the ackFromDestination() function of the smart contract deployed on the source chain, passing in the request ID as an argument.
+
+Once the promise gets resolved, then() function is called, allowing you to perform some action with the data returned from the acknowledgement.
+
+If an error occurs, the catch() function is called and an alert is displayed, reminding the user to connect to the Mumbai Network.
+
+```sh
+<button onClick={
+
+          const contractAddress = "0x9fF2c6D8bFf3b87538A156Ea1a768ec5A2d55B32";
+
+          const contract = new ethers.Contract(
+                                contractAddress,
+                                abi,
+                                provider1
+                            );
+	  const data = await contract.currentRequestId(); setReq(data)
+          contract.ackFromDestination(req).then((data) => {
+
+                              // do something
+			      
+                            }).catch(() => {
+                                alert('connect to Mumbai Network')
+                            })
+}>Acknowledgement</button>
+```
+`
 
 # 🏗 Backend
   
