@@ -122,7 +122,7 @@ If MetaMask is not detected, the user is alerted that it is not installed
 
 ### `Sending message to the Desination Chain`
 
-![Ping-Pong](https://firebasestorage.googleapis.com/v0/b/ping-pong-9f9af.appspot.com/o/Demo2.gif?alt=media&token=43933f12-3b85-4dcb-884c-e936a9d704ff)
+![Ping-Pong](https://firebasestorage.googleapis.com/v0/b/ping-pong-9f9af.appspot.com/o/send.png?alt=media&token=019e5d27-a54b-41a7-beb4-c0b5c63e2e7d)
 
 This code creates a button with an onClick event listener. When the button is clicked, it uses the provider object to get the signer and creates a new ethers.Contract instance with the contractAddress, abi, and signer parameters.
 
@@ -151,7 +151,7 @@ The pingDestination() function takes several parameters, as per its signature de
 ```
 ## `Fetching Received message from Destination Chain`
 
-![Ping-Pong](https://firebasestorage.googleapis.com/v0/b/ping-pong-9f9af.appspot.com/o/Demo2.gif?alt=media&token=43933f12-3b85-4dcb-884c-e936a9d704ff)
+![Ping-Pong](https://firebasestorage.googleapis.com/v0/b/ping-pong-9f9af.appspot.com/o/recieve%20message.png?alt=media&token=1f5dbb88-4e97-4be4-a9ea-2185c192c02a)
 
 This code defines a button that is used to fetch the received message on the destination chain. First, it fetches the current request ID corresponding to the message sent from the source chain by calling the currentRequestId function of the smart contract deployed on the Polygon Mumbai network using the provider1 provider.
 
@@ -194,7 +194,7 @@ Then, it calls the pingFromSource function of the smart contract deployed on the
 
 ### `Fetching Acknowledgement from the source chain`
 
-![Ping-Pong](https://firebasestorage.googleapis.com/v0/b/ping-pong-9f9af.appspot.com/o/Demo2.gif?alt=media&token=43933f12-3b85-4dcb-884c-e936a9d704ff)
+![Ping-Pong](https://firebasestorage.googleapis.com/v0/b/ping-pong-9f9af.appspot.com/o/Ack.png?alt=media&token=6a2f6d8e-0439-412e-99e4-273c7695f404)
 
 The button when clicked , first, it fetches the current request ID corresponding to the message sent from the smart contract deployed on the source chain by calling the currentRequestId() function of the contract deployed on the source chain.
 
