@@ -154,28 +154,28 @@ Then, it calls the pingFromSource function of the smart contract deployed on the
 ```sh
  <button type="button" class="btn btn-success" onClick={async () => {
                            
-                            const contractAddress1 = "0x9fF2c6D8bFf3b87538A156Ea1a768ec5A2d55B32";
+           const contractAddress1 = "0x9fF2c6D8bFf3b87538A156Ea1a768ec5A2d55B32";
 
 
-                            const contract1 = new ethers.Contract(
+           const contract1 = new ethers.Contract(
                                 contractAddress1,
                                 abi,
                                 provider1
                             )
-                            const data = await contract1.currentRequestId();
+           const data = await contract1.currentRequestId();
 
-                            setReq(data)
+           setReq(data)
 
 
-                            const contractAddress = "0xf7015AD80B60EA4A9e12d90ff00D68fAa8e08df4";
+           const contractAddress = "0xf7015AD80B60EA4A9e12d90ff00D68fAa8e08df4";
 
-                            const contract = new ethers.Contract(
+           const contract = new ethers.Contract(
                                 contractAddress,
                                 abi,
                                 provider2
                             );
 
-                            contract.pingFromSource(0, "80001", req).then((data) => {
+          contract.pingFromSource(0, "80001", req).then((data) => {
 
                               // do something
 			      
@@ -183,8 +183,7 @@ Then, it calls the pingFromSource function of the smart contract deployed on the
                                 alert('connect to Fuji Network')
                             })
 
-
-                        }}>Message Recieved</button>
+}}>Message Recieved</button>
 ````
 
 # 🏗 Backend
