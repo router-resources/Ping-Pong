@@ -144,8 +144,49 @@ The pingDestination() function takes several parameters, as per its signature de
 
 
 	}}>Send Message</button>
+```
+## `Fetching Received message from Destination Chain`
 
-  
+This code defines a button that is used to fetch the received message on the destination chain. First, it fetches the current request ID corresponding to the message sent from the source chain by calling the currentRequestId function of the smart contract deployed on the Polygon Mumbai network using the provider1 provider.
+
+Then, it calls the pingFromSource function of the smart contract deployed on the Avalanche Fuji network using the provider2 provider and passing in the current request ID and other necessary arguments based on the function's signature.You can checkout the signature of the function here [`Fetching Received message from Destination Chain`](#Fetching-Received-message-from-Destination-Chain).
+
+```sh
+ <button type="button" class="btn btn-success" onClick={async () => {
+                           
+                            const contractAddress1 = "0x9fF2c6D8bFf3b87538A156Ea1a768ec5A2d55B32";
+
+
+                            const contract1 = new ethers.Contract(
+                                contractAddress1,
+                                abi,
+                                provider1
+                            )
+                            const data = await contract1.currentRequestId();
+
+                            setReq(data)
+
+
+                            const contractAddress = "0xf7015AD80B60EA4A9e12d90ff00D68fAa8e08df4";
+
+                            const contract = new ethers.Contract(
+                                contractAddress,
+                                abi,
+                                provider2
+                            );
+
+                            contract.pingFromSource(0, "80001", req).then((data) => {
+
+                              // do something
+			      
+                            }).catch(() => {
+                                alert('connect to Fuji Network')
+                            })
+
+
+                        }}>Message Recieved</button>
+````
+
 # 🏗 Backend
   
 ### `Initiating the Contract`
