@@ -61,7 +61,29 @@ npm start
 
 ### `Basic imports and Setting up Providers`
 
+First we  import the ethers library from the Ethereum JavaScript library ethers.js.
 
+ethers is a JavaScript library that allows developers to interact with Ethereum networks using various programming languages, including JavaScript, TypeScript, Python, and others.
+
+The ethers library provides a wide range of tools and utilities for interacting with Ethereum, such as creating wallets, managing accounts, signing transactions, deploying smart contracts, and more.
+
+```sh
+import { ethers } from 'ethers';
+```
+
+Next we declares a variable called 'abi' and initializes it with an array of values. The values in the array represent the ABI (Application Binary Interface) definition for a smart contract on the Ethereum network. The ABI specifies how function calls and data should be formatted for smart contract interactions.
+
+The abi variable can be used in conjunction with various Ethereum development tools, including the ethers library, to interact with the smart contract defined by the ABI.
+
+We can find ABI of a smart contract in the compile section of our Remix IDE
+
+```sh
+const abi=[<paste your ABI here>]
+```
+
+Next,we declare three instances of the ethers.providers class: Web3Provider and two JsonRpcProvider instances.
+
+ethers.providers is a sub-module of the ethers library that provides implementations of Ethereum providers. Providers are used to connect to Ethereum nodes and retrieve information from the Ethereum network, such as account balance, or even calling a function of the smart contract
 
   
 # 🏗 Backend
