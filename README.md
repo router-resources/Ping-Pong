@@ -118,7 +118,32 @@ If MetaMask is not detected, the user is alerted that it is not installed
      </button> 
   ```
 
+### `Sending message to the Desination Chain`
 
+This code creates a button with an onClick event listener. When the button is clicked, it uses the provider object to get the signer and creates a new ethers.Contract instance with the contractAddress, abi, and signer parameters.
+
+The code then calls the pingDestination() function of the contract with the given parameters. This function is a part of the CrossTalk library, and it sends a message from the source chain to the destination chain.
+
+The pingDestination() function takes several parameters, as per its signature defined. You can checkout its signature here [`Sending a message to the destination chain`](#Sending-a-message-to-the-destination-chain). 
+
+```sh
+<button type="button" class="btn btn-success" onClick={async () => {
+	
+         const signer = provider.getSigner();
+         const contractAddress = "0x9fF2c6D8bFf3b87538A156Ea1a768ec5A2d55B32";
+	 const contract = new ethers.Contract(
+                                contractAddress,
+                                abi,
+                                signer
+                            );
+
+        contract.pingDestination(0, "43113", 200000, 200000, "0xf7015AD80B60EA4A9e12d90ff00D68fAa8e08df4",
+			message, 1000000000000).then(() => {
+
+                            })
+
+
+	}}>Send Message</button>
 
   
 # 🏗 Backend
