@@ -248,7 +248,7 @@ For initiating the smart contract named "PingPong", the contract imports three e
 
 3. **IGateway.sol**
 
-The "ICrossTalkApplication.sol", "Utils.sol" and "IGateway.sol" contracts are imported from the "evm-gateway-contract/contracts" The "PingPong" contract implements the "ICrossTalkApplication" contract by inheriting from it. This means that the "PingPong" contract must have all the functions and variables defined in the "ICrossTalkApplication" contract. By importing and implementing these contracts, the "CrossChat" contract will have access to their functionality and will be compatible with other contracts that follow the same standards.
+The "ICrossTalkApplication.sol", "Utils.sol" and "IGateway.sol" contracts are imported from the "evm-gateway-contract/contracts" The "PingPong" contract implements the "ICrossTalkApplication" contract by inheriting from it. This means that the "PingPong" contract must have all the functions and variables defined in the "ICrossTalkApplication" contract. By importing and implementing these contracts, the "PingPong" contract will have access to their functionality and will be compatible with other contracts that follow the same standards.
 
 ```sh
 //SPDX-License-Identifier: UNLICENSED
