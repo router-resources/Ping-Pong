@@ -1,36 +1,42 @@
-body{
-    background-color: rgba(40,44,52);
+body {
+    background-color: rgba(40, 44, 52);
     /* display:flex; */
 }
-.main{
-    margin-top:1%;
-    display:flex;
+
+.main {
+    width: 100vw;
+    display: flex;
+    gap: 1rem;
+    margin-top: 1%;
+    display: flex;
     justify-content: center;
-    
-   
 }
-.l1{
-   
-    width:30em;
+
+.connect-wallet {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.l1 {
+    width: 30em;
     display: flex;
     flex-direction: column;
     /* background-color: rgb(25,26,27); */
     align-items: center;
-    
-  
 }
-.l2{
-    margin-left:1em;
-    width:30em;
+
+.l2 {
+    margin-left: 1em;
+    width: 30em;
     display: flex;
     flex-direction: column;
-    background-color: rgb(25,26,27);
+    background-color: rgb(25, 26, 27);
     align-items: center;
-    
-    height:50em;
-    
-    
+    height: 50em;
 }
+
 /* input{
     border-radius: 1em;
     height:7em;
@@ -38,14 +44,11 @@ body{
    
 }
 button{
-   
     width:30em;
     border-radius: 1em;
     height:3em;
 } */
-button{
-   
-    width:18em;
+button {
+    width: 18em;
     border-radius: 1em;
-   
 }
