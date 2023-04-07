@@ -4,14 +4,11 @@ import Login from './pages/Login'
 import './App.css';
 const App = () => {
 
-  return(
+  return (
     <>
-
-    <Routes>
-      <Route path="/" element={<Login />} />
-    
-    </Routes>
-    
+      <Routes>
+        <Route path="/" element={<Login />} />
+      </Routes>
     </>
   )
 };
